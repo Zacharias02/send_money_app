@@ -43,6 +43,8 @@ dev_dependencies:
   json_serializable: ^6.9.5
   injectable_generator: ^2.7.0
   build_runner: ^2.5.4
+  mockito: ^5.4.6
+  bloc_test: ^10.0.0
 
 flutter_gen:
   output: lib/application/generated/

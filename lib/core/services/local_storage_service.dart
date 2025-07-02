@@ -4,7 +4,9 @@ import 'package:send_money_app/core/common/app_constants.dart';
 
 @lazySingleton
 class LocalStorageService {
-  final _storage = FlutterSecureStorage();
+  const LocalStorageService(this._storage);
+
+  final FlutterSecureStorage _storage;
 
   // Store values to local storage
   Future<void> writeData(String value) async {

@@ -113,5 +113,3 @@ class _LoginFormState extends State<LoginForm> {
     );
   }
 }
-
-class ErrorDialog {}
