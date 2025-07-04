@@ -6,7 +6,7 @@ import 'package:send_money_app/core/presentation/widgets/app_button.dart';
 import 'package:send_money_app/core/presentation/widgets/app_error_dialog.dart';
 import 'package:send_money_app/core/presentation/widgets/app_text_field.dart';
 import 'package:send_money_app/features/authentication/presentation/cubits/auth_cubit/auth_cubit.dart';
-import 'package:send_money_app/features/wallet/wallet_screen.dart';
+import 'package:send_money_app/features/wallet/presentation/screens/wallet_screen.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});

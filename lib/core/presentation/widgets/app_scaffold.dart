@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:send_money_app/core/common/app_theme.dart';
 
 class AppScaffold extends StatelessWidget {
@@ -19,12 +20,11 @@ class AppScaffold extends StatelessWidget {
           ? AppBar(
               title: Text(
                 appBarTitle!,
-                style: TextStyle(
-                  color: AppTheme.kWhiteColor,
+                style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              backgroundColor: AppTheme.kUltraDarkColor,
+              backgroundColor: AppTheme.kWhiteColor,
             )
           : null,
       body: Padding(

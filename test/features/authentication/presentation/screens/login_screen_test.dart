@@ -19,10 +19,7 @@ void main() {
   setUp(() {
     mockAuthCubit = MockAuthCubit();
 
-    // Register the mock cubit into getIt for the test
-    if (!getIt.isRegistered<AuthCubit>()) {
-      getIt.registerSingleton<AuthCubit>(mockAuthCubit);
-    }
+    getIt.registerSingleton<AuthCubit>(mockAuthCubit);
 
     // Stub initial state if needed
     when(mockAuthCubit.state).thenReturn(AuthState.init());

@@ -100,37 +100,4 @@ void main() {
     expect(find.text('Invalid credentials'), findsOneWidget);
     expect(find.byType(Dialog), findsOneWidget);
   });
-
-  // TODO: 'Improve UT'
-  // testWidgets('navigates to WalletScreen on successful login', (tester) async {
-  //   // Simulate navigation by pushing a named route instead of WalletScreen directly
-  //   final navKey = GlobalKey<NavigatorState>();
-
-  //   when(mockAuthCubit.stream).thenAnswer(
-  //     (_) => Stream.value(AuthState.success(isAuthenticated: true)),
-  //   );
-  //   when(
-  //     mockAuthCubit.state,
-  //   ).thenReturn(AuthState.success(isAuthenticated: true));
-
-  //   await tester.pumpWidget(
-  //     MaterialApp(
-  //       navigatorKey: navKey,
-  //       home: AppScaffold(
-  //         body: BlocProvider<AuthCubit>.value(
-  //           value: mockAuthCubit,
-  //           child: LoginForm(),
-  //         ),
-  //       ),
-  //       routes: {
-  //         '/wallet': (context) => const AppScaffold(body: Text('Wallet Screen')),
-  //       },
-  //     ),
-  //   );
-
-  //   // Let the listener trigger navigation
-  //   await tester.pumpAndSettle();
-
-  //   expect(find.text('Wallet Screen'), findsOneWidget);
-  // });
 }

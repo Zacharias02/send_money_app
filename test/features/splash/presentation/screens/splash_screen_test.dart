@@ -6,7 +6,7 @@ import 'package:send_money_app/core/di/injector.dart';
 import 'package:send_money_app/features/authentication/presentation/cubits/auth_cubit/auth_cubit.dart';
 import 'package:send_money_app/features/authentication/presentation/screens/login_screen.dart';
 import 'package:send_money_app/features/splash/presentation/screens/splash_screen.dart';
-import 'package:send_money_app/features/wallet/wallet_screen.dart';
+import 'package:send_money_app/features/wallet/presentation/screens/wallet_screen.dart';
 import 'package:send_money_app/core/presentation/widgets/app_logo.dart';
 import 'package:send_money_app/core/presentation/widgets/app_progress_indicator.dart';
 

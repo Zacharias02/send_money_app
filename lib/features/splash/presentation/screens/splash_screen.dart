@@ -5,7 +5,7 @@ import 'package:send_money_app/core/presentation/widgets/app_progress_indicator.
 import 'package:send_money_app/core/presentation/widgets/app_scaffold.dart';
 import 'package:send_money_app/features/authentication/presentation/cubits/auth_cubit/auth_cubit.dart';
 import 'package:send_money_app/features/authentication/presentation/screens/login_screen.dart';
-import 'package:send_money_app/features/wallet/wallet_screen.dart';
+import 'package:send_money_app/features/wallet/presentation/screens/wallet_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

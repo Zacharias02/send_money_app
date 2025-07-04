@@ -11,6 +11,7 @@ class AppTheme {
   // Custom Colors
   static const kWhiteColor = Colors.white;
   static const kBlackColor = Colors.black;
+  static const kSuccessColor = Colors.green;
   static const kErrorColor = Colors.redAccent;
   static const kMutedColor = Color(0xFFF0F2F5);
   static final kMutedTextColor = Colors.black.withValues(alpha: .50);

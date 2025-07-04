@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider.value(
-      value: getIt<AuthCubit>()..signOut(),
+      value: getIt<AuthCubit>()..checkSession(),
       child: MaterialApp(
         title: 'Send Money App',
         debugShowCheckedModeBanner: false,

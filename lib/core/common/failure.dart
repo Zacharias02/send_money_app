@@ -4,16 +4,14 @@ abstract class Failure {
   final String? message;
 }
 
-class APIFailure extends Failure {
-  const APIFailure({
-    this.code,
-    this.statusCode,
+class ServerFailure extends Failure {
+  const ServerFailure({
     this.status,
+    this.statusCode,
     super.message,
   });
 
-  final int? code;
-  final String? statusCode;
+  final int? statusCode;
   final String? status;
 }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:send_money_app/core/common/app_theme.dart';
 
@@ -9,6 +10,9 @@ class AppTextField extends StatefulWidget {
     this.hintText,
     this.validator,
     this.isPassword = false,
+    this.inputFormatters,
+    this.textInputType,
+    this.prefix,
   });
 
   factory AppTextField.password({
@@ -28,6 +32,9 @@ class AppTextField extends StatefulWidget {
   final String? hintText;
   final String? Function(String?)? validator;
   final bool isPassword;
+  final List<TextInputFormatter>? inputFormatters;
+  final TextInputType? textInputType;
+  final Widget? prefix;
 
   @override
   State<AppTextField> createState() => _AppTextFieldState();
@@ -44,12 +51,13 @@ class _AppTextFieldState extends State<AppTextField> {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: widget.controller,
-
       style: GoogleFonts.poppins(
         fontSize: 13,
         color: AppTheme.kBlackColor,
       ),
       validator: widget.validator,
+      inputFormatters: widget.inputFormatters,
+      keyboardType: widget.textInputType,
       obscureText: _isObscured,
       decoration: InputDecoration(
         filled: true,
@@ -80,6 +88,7 @@ class _AppTextFieldState extends State<AppTextField> {
           borderSide: BorderSide(color: AppTheme.kErrorColor),
           borderRadius: BorderRadius.circular(20),
         ),
+        prefix: widget.prefix,
         suffixIcon: widget.isPassword
             ? IconButton(
                 onPressed: _showOrHidePassword,
