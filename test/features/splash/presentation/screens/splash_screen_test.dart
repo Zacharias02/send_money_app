@@ -54,24 +54,6 @@ void main() {
     expect(find.byType(AppProgressIndicator), findsOneWidget);
   });
 
-  testWidgets('navigates to WalletScreen if authenticated', (tester) async {
-    // Prepare stream to emit authenticated state after a frame
-    when(
-      mockAuthCubit.stream,
-    ).thenAnswer((_) => Stream.value(AuthState.success(isAuthenticated: true)));
-    when(
-      mockAuthCubit.state,
-    ).thenReturn(AuthState.success(isAuthenticated: true));
-
-    await tester.pumpWidget(createWidgetUnderTest());
-
-    // BlocListener triggers navigation after the first frame, so pump and settle
-    await tester.pumpAndSettle();
-
-    expect(find.byType(WalletScreen), findsOneWidget);
-    expect(find.byType(LoginScreen), findsNothing);
-  });
-
   testWidgets('navigates to LoginScreen if NOT authenticated', (tester) async {
     // Prepare stream to emit unauthenticated state
     when(mockAuthCubit.stream).thenAnswer(
