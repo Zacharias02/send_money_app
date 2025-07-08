@@ -1,7 +1,5 @@
 # Send Money App
 
-**Mega Admin Portal (MAP)** is the one-stop shop of all admin panels and services in PDAX.
-
 ## Getting Started
 
 ### Prerequisites
