@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:send_money_app/core/common/app_constants.dart';
+import 'package:send_money_app/application/config/app_environment.dart';
 import 'package:send_money_app/core/common/exceptions.dart';
 import 'package:send_money_app/core/services/local_storage_service.dart';
 
@@ -30,7 +30,9 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
   @override
   Future<bool> getAuthSession() async {
     try {
-      final rawData = await _localStorage.getData(AppConstants.kAuthLoginKey);
+      final rawData = await _localStorage.getData(
+        AppEnvironment.localAuthLoginKey,
+      );
       return rawData == 'true';
     } catch (e) {
       throw LocalStorageException(message: e.toString());
@@ -40,7 +42,7 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
   @override
   Future<void> deleteAuthSession() async {
     try {
-      await _localStorage.deleteData(AppConstants.kAuthLoginKey);
+      await _localStorage.deleteData(AppEnvironment.localAuthLoginKey);
     } catch (e) {
       throw LocalStorageException(message: e.toString());
     }

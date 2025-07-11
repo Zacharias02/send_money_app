@@ -1,6 +1,6 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:injectable/injectable.dart';
-import 'package:send_money_app/core/common/app_constants.dart';
+import 'package:send_money_app/application/config/app_environment.dart';
 
 @lazySingleton
 class LocalStorageService {
@@ -10,7 +10,7 @@ class LocalStorageService {
 
   // Store values to local storage
   Future<void> writeData(String value) async {
-    await _storage.write(key: AppConstants.kAuthLoginKey, value: value);
+    await _storage.write(key: AppEnvironment.localAuthLoginKey, value: value);
   }
 
   // Get store values from local by

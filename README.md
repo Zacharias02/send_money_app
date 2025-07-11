@@ -27,6 +27,16 @@
 
 ### Project Setup
 
+#### Environment Setup
+
+- Copy the provided `sample.env` file and rename it to .env in the project root directory.
+- Open the new .env file and add your API keys:
+  - To get your REST API key, go to https://crudcrud.com and generate a temporary API key. Copy the unique API key from the URL provided:
+
+      ```
+      https://crudcrud.com/api/{your-api-key}
+      ```
+
 - Clone `send_money_app` repository to your local machine and rebuild the project.
 
   ```bash
@@ -38,20 +48,12 @@
   sh scripts/rebuild.sh
   ```
 
-- To set up the fake API, go to https://crudcrud.com and generate a temporary API key. Copy the unique API key from the URL provided:
-
-    ```
-    https://crudcrud.com/api/{your-api-key}
-    ```
-
-- Then update the `kRestApiKey` value inside `app_constants.dart` with that key.
-
 ## Usage
   
 - Optionally, you can run this via Dart CLI:
 
   ```bash
-  flutter run
+  flutter run --dart-define-from-file=".env"
   ```
 
 ### Testing

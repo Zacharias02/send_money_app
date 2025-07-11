@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:send_money_app/core/common/app_constants.dart';
+import 'package:send_money_app/application/config/app_environment.dart';
 import 'package:send_money_app/core/common/exceptions.dart';
 import 'package:send_money_app/features/authentication/data/data_sources/auth_local_data_source.dart';
 
@@ -33,7 +33,7 @@ void main() {
 
     test('getAuthSession returns true when stored value is "true"', () async {
       when(
-        mockStorage.getData(AppConstants.kAuthLoginKey),
+        mockStorage.getData(AppEnvironment.localAuthLoginKey),
       ).thenAnswer((_) async => 'true');
 
       final result = await dataSource.getAuthSession();
@@ -43,7 +43,7 @@ void main() {
 
     test('getAuthSession returns false when stored value is "false"', () async {
       when(
-        mockStorage.getData(AppConstants.kAuthLoginKey),
+        mockStorage.getData(AppEnvironment.localAuthLoginKey),
       ).thenAnswer((_) async => 'false');
 
       final result = await dataSource.getAuthSession();
@@ -63,7 +63,9 @@ void main() {
     test('deleteAuthSession calls deleteData with correct key', () async {
       await dataSource.deleteAuthSession();
 
-      verify(mockStorage.deleteData(AppConstants.kAuthLoginKey)).called(1);
+      verify(
+        mockStorage.deleteData(AppEnvironment.localAuthLoginKey),
+      ).called(1);
     });
 
     test('deleteAuthSession throws LocalStorageException on error', () async {

@@ -1,8 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+import 'package:send_money_app/application/config/app_environment.dart';
 import 'package:send_money_app/core/services/local_storage_service.dart';
-
-import 'package:send_money_app/core/common/app_constants.dart';
 
 import '../../mocks/core_mock.mocks.dart';
 
@@ -21,7 +20,7 @@ void main() {
 
       verify(
         mockStorage.write(
-          key: AppConstants.kAuthLoginKey,
+          key: AppEnvironment.localAuthLoginKey,
           value: 'test_token',
         ),
       ).called(1);
